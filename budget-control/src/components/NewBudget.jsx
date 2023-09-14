@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Message from './Message'
 
 const NewBudget = ({budget, setBudget}) => {
+<<<<<<< HEAD
 
     const [message, setMessage] = useState('')
 
@@ -14,6 +15,8 @@ const NewBudget = ({budget, setBudget}) => {
             console.log("Yes! is a number")
         }
     }
+=======
+>>>>>>> 644482509a6d863c31bf5eff46caa1823a9d9a52
   return (
     <div className='contenedor-presupuesto contenedor sombra'>
 
