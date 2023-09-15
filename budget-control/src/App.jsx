@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header'
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
 import Modal from './components/Modal';
+import { generateId } from './helpers';
 
 function App() {
 
@@ -22,7 +23,14 @@ function App() {
   }
 
   const saveExpense = expense => {
-    console.log(expense);
+    expense.id = generateId()
+    setExpenses([...expenses, expense])
+
+    setAnimateModal(false)
+
+    setTimeout(() => {
+        setModal(false)
+    }, 750);
   }
 
   return (

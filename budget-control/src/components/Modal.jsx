@@ -11,7 +11,6 @@ const Modal = ({setModal, animateModal, setAnimateModal, saveExpense}) => {
   const [category, setCategory] = useState('')
 
   const hideModal = () => {
-      setModal(false)
       setAnimateModal(false)
 
       setTimeout(() => {
