@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import CloseBtn from '../img/cerrar.svg';
 
 const Modal = ({setModal, animateModal, setAnimateModal}) => {
+
+  const [name, setName] = useState('')
+  const [amount, setAmount] = useState('')
+  const [category, setCategory] = useState('')
 
     const hideModal = () => {
         setModal(false)
@@ -31,6 +36,8 @@ const Modal = ({setModal, animateModal, setAnimateModal}) => {
             id='name'
             type="text" 
             placeholder='Add the name of the expense'
+            value={name}
+            onChange={e => setName(e.target.value)}
           />
 
         </div>
@@ -42,6 +49,8 @@ const Modal = ({setModal, animateModal, setAnimateModal}) => {
             id='amount'
             type="number" 
             placeholder='Add the amount of the expense: ej.300'
+            value={amount}
+            onChange={e => setAmount (Number(e.target.value))}
           />
           
         </div>
@@ -51,8 +60,10 @@ const Modal = ({setModal, animateModal, setAnimateModal}) => {
 
           <select
             id="category"
+            value={category}
+            onChange={e => setCategory(e.target.value)}
           >
-            <option value="">-- Select</option>
+            <option value="">-- Select --</option>
             <option value="saving">Saving</option>
             <option value="meal">Meal</option>
             <option value="house">House</option>
