@@ -6,6 +6,11 @@ function App() {
 
   const [budget, setBudget] = useState(0);
   const [isValidBudget,setIsValidBudget] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const handleNewSpent = () => {
+    setModal(true);
+  }
 
   return (
     <div>
@@ -20,10 +25,13 @@ function App() {
         <div className='nuevo-gasto'>
           <img
             src = {IconoNuevoGasto}
-            alt='Icono Nuevo Gasto'  
+            alt='Icono Nuevo Gasto'
+            onClick={handleNewSpent}
           />
         </div>
       )}
+
+      {modal && <p>Desde modal</p>}
 
     </div>
   )
