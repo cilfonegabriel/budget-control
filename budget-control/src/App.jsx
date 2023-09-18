@@ -7,6 +7,7 @@ import IconoNuevoGasto from './img/nuevo-gasto.svg'
 
 function App() {
 
+  const[expenses, setExpenses] = useState([]);
 
   const [budget, setBudget] = useState(0);
   const [isValidBudget,setIsValidBudget] = useState(false);
@@ -14,7 +15,6 @@ function App() {
   const [modal, setModal] = useState(false);
   const [animateModal, setAnimateModal] = useState(false);
 
-  const[expenses, setExpenses] = useState([]);
 
   const handleNewSpent = () => {
     setModal(true);
