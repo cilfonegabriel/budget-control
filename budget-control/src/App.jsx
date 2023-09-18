@@ -7,6 +7,7 @@ import IconoNuevoGasto from './img/nuevo-gasto.svg'
 
 function App() {
 
+
   const [budget, setBudget] = useState(0);
   const [isValidBudget,setIsValidBudget] = useState(false);
 
@@ -36,8 +37,9 @@ function App() {
   }
 
   return (
-    <div className={modal && 'fijar'}>
+    <div className={modal ? 'fijar' : ''}>
       <Header
+        expenses={expenses}
         budget={budget}
         setBudget={setBudget}
         isValidBudget={isValidBudget}
