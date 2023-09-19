@@ -93,6 +93,7 @@ function App() {
   return (
     <div className={modal ? 'fijar' : ''}>
       <Header
+        setExpenses = {setExpenses}
         expenses={expenses}
         budget={budget}
         setBudget={setBudget}
