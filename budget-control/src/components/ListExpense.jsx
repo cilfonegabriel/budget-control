@@ -1,17 +1,43 @@
 import React from 'react'
 import Expense from './Expense'
 
-const listExpense = ({expenses}) => {
+const listExpense = ({
+    expenses,
+    setEditExpenses, 
+    deleteExpense,
+    expensesFilters,
+    filter
+}) => {
   return (
     <div className='listado-gastos contenedor'>
-        <h2>{expenses.length ? 'Expenses' : 'There isnt expenses'}</h2>
+        {filter ? (
+          <>
+            <h2>{expensesFilters.length ? 'Expenses' : 'There isnt expenses'}</h2>
 
-        {expenses.map( expense => (
-            <Expense 
-                key={expense.id}
-                expense = {expense}
-            />
-        ))}
+              {expensesFilters.map( expense => (
+                <Expense 
+                    key={expense.id}
+                    expense = {expense}
+                    setEditExpenses = {setEditExpenses}
+                    deleteExpense = {deleteExpense}
+                />
+            ))}
+            </>
+          ) : (
+            <>
+              <h2>{expenses.length ? 'Expenses' : 'There isnt expenses'}</h2>
+
+                {expenses.map( expense => (
+                  <Expense 
+                      key={expense.id}
+                      expense = {expense}
+                      setEditExpenses = {setEditExpenses}
+                      deleteExpense = {deleteExpense}
+                  />
+                ))}
+            </>
+          )
+        }
     </div>
   )
 }
