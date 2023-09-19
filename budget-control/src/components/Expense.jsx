@@ -28,12 +28,12 @@ const dictionaryIcons = {
 };
 
 
-const Expense = ({expense}) => {
+const Expense = ({expense, setEditExpenses}) => {
   const { category,name, amount, id, date } = expense
 
   const leadingActions = () => (
     <LeadingActions>
-        <SwipeAction onClick={() => console.log('editar..')}>
+        <SwipeAction onClick={() =>setEditExpenses(expense)}>
             Editar
         </SwipeAction>
     </LeadingActions>

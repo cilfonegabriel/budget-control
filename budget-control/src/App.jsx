@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect,useState } from 'react'
 import Header from './components/Header'
 import ListExpense from './components/listExpense';
 import Modal from './components/Modal';
@@ -14,6 +14,17 @@ function App() {
 
   const [modal, setModal] = useState(false);
   const [animateModal, setAnimateModal] = useState(false);
+
+  const [editExpenses, setEditExpenses] = useState({})
+
+  useEffect(() => {
+    if(Object.keys(editExpenses).length > 0) {
+      setModal(true);
+
+      setTimeout(() => {
+        setAnimateModal(true);
+      }, 500);    }
+  },[editExpenses])
 
 
   const handleNewSpent = () => {
@@ -51,6 +62,7 @@ function App() {
         <main>
           <ListExpense
             expenses = {expenses}
+            setEditExpenses={setEditExpenses}
           />
         </main>
         <div className='nuevo-gasto'>
