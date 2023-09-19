@@ -590,4 +590,14 @@ body .modal {
     .swipeable-list .swipe-action {
         font-size: 1.6rem;
     }
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .campo label,
+    .campo select {
+        width: 100%;
+    }
 }
