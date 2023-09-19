@@ -39,7 +39,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://650a219452ef015e54479aca--lucent-haupia-d88218.netlify.app/)
+- [Live Demo](https://650a2f16de9fe8654850d9cb--grand-vacherin-07da4b.netlify.app/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
