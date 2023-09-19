@@ -4,6 +4,7 @@ import ListExpense from './components/listExpense';
 import Modal from './components/Modal';
 import { generateId } from './helpers';
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
+import Expense from './components/Expense';
 
 function App() {
 
@@ -37,10 +38,14 @@ function App() {
   }
 
   const saveExpense = expense => {
-    expense.id = generateId()
-    expense.date = Date.now()
-    setExpenses([...expenses, expense])
-
+    if(expense.id) {
+      const updatedExpenses =expenses.map(expenseState => expenseState === expense.id ? expense : expenseState)
+      setExpenses(updatedExpenses)
+    } else {
+      expense.id = generateId()
+      expense.date = Date.now()
+      setExpenses([...expenses, expense])
+    }
     setAnimateModal(false)
 
     setTimeout(() => {
